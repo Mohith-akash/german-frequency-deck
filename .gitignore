@@ -1,0 +1,46 @@
+# Generated data files (regenerate via build/ scripts)
+*.json
+!docs/**/*.json
+
+# Audio & image media (too large for git, distribute via releases)
+*.mp3
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif
+*.woff2
+*.woff
+*.ttf
+*.otf
+
+# Built deck
+*.apkg
+*.colpkg
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local Anki state (when working on it)
+collection.anki2
+collection.anki2-wal
+collection.anki2-shm
+collection.media/
+collection.media.db2
