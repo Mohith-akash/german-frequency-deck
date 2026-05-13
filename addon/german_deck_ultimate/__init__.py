@@ -20,7 +20,7 @@ from aqt import mw, gui_hooks
 from aqt.utils import showInfo
 
 NOTETYPE_NAME = "English-Deutsch+"
-DONE_FLAG     = "german_deck_ultimate_v5"
+DONE_FLAG     = "german_deck_ultimate_v6"
 DATA_DIR      = Path(os.environ.get("TEMP", "/tmp"))
 
 # ── Load pre-generated data ────────────────────────────────────────────────────
@@ -214,6 +214,100 @@ BACK = r"""
   var ARTS=['der','die','das','der, die','die (pl)','der, das','die, das','der, die, das','das, die (pl)','(pl)'];
   var p1=document.getElementById('pos1-tag');
   if(p1 && ARTS.indexOf(p1.textContent.trim())!==-1) p1.style.display='none';
+})();
+</script>
+"""
+
+# ══════════════════════════════════════════════════════════════════════════════
+# CARD 2 — Production (English → German). Forces active retrieval.
+# ══════════════════════════════════════════════════════════════════════════════
+PROD_FRONT = r"""
+<div class="prod-front">
+  <div class="prod-level-badge" id="prod-level-badge">{{Level}}</div>
+
+  <div class="prod-pos-pill">{{Part-of-Speech 1}}</div>
+  <div class="prod-def">{{Definition 1}}</div>
+
+  {{#English 1}}
+  <div class="prod-en-hint">{{English 1}}</div>
+  {{/English 1}}
+
+  <div class="prod-prompt">Wie sagt man das auf Deutsch?</div>
+</div>
+
+<script>
+(function(){
+  var ARTICLES = ['der','die','das','der, die','die (pl)','der, das','die, das','der, die, das','das, die (pl)','(pl)'];
+  document.querySelectorAll('.prod-pos-pill').forEach(function(el){
+    if(ARTICLES.indexOf(el.textContent.trim()) !== -1) el.textContent = 'noun';
+  });
+  var lvl = '{{Level}}'.trim();
+  var lb = document.getElementById('prod-level-badge');
+  if(lb){
+    if(lvl){ lb.classList.add('lvl-'+lvl.replace('+','plus')); }
+    else { lb.style.display='none'; }
+  }
+})();
+</script>
+"""
+
+PROD_BACK = r"""
+{{FrontSide}}
+
+<div class="answer-divider"></div>
+
+<div class="prod-back">
+  <div class="word-header" id="prod-word-header">
+    <div class="gender-badge" id="prod-gender-badge"></div>
+    <div class="word-main" id="prod-word-main">{{Word}}</div>
+    <div class="word-plural" id="prod-word-plural"></div>
+    <div class="ipa-line">[{{IPA}}]</div>
+  </div>
+
+  {{#WordAudio}}<div class="audio-row">{{WordAudio}}</div>{{/WordAudio}}
+
+  {{#German 1}}
+  <div class="prod-example">
+    {{#SentenceAudio1}}<span class="sent-audio">{{SentenceAudio1}}</span>{{/SentenceAudio1}}
+    <div class="de-sent">{{German 1}}</div>
+  </div>
+  {{/German 1}}
+
+  {{#Conjugation}}
+  <div class="conj-section">
+    <div class="conj-title">Konjugation</div>
+    {{Conjugation}}
+  </div>
+  {{/Conjugation}}
+</div>
+
+<script>
+(function(){
+  var pos1 = '{{Part-of-Speech 1}}'.trim();
+  var header  = document.getElementById('prod-word-header');
+  var badge   = document.getElementById('prod-gender-badge');
+  var wordEl  = document.getElementById('prod-word-main');
+  var plurEl  = document.getElementById('prod-word-plural');
+
+  var gender = null;
+  if(pos1==='der'||pos1==='der, die'||pos1==='der, das') gender='der';
+  else if(pos1==='die'||pos1==='die (pl)'||pos1==='die, das'||pos1==='(pl)') gender='die';
+  else if(pos1==='das'||pos1==='das, die (pl)') gender='das';
+  else if(pos1==='der, die, das') gender='mixed';
+
+  if(gender){
+    header.classList.add('gender-'+gender);
+    var lbl={der:'der — maskulin',die:'die — feminin',das:'das — neutrum',mixed:'mixed'};
+    badge.textContent = lbl[gender]||pos1;
+    var raw=wordEl.textContent.trim(), ci=raw.indexOf(',');
+    if(ci!==-1){
+      wordEl.textContent = raw.slice(0,ci).trim();
+      plurEl.textContent = 'Pl. '+raw.slice(ci+1).trim();
+    }
+  } else {
+    badge.style.display='none';
+    plurEl.style.display='none';
+  }
 })();
 </script>
 """
@@ -502,6 +596,93 @@ CSS = """
   letter-spacing:0.8px; text-transform:uppercase;
 }
 .nightMode .rank-tag, body.nightMode .rank-tag { color:#444; }
+
+/* ══ PRODUCTION CARD (Card 2: EN → DE) ═════════════════════════════ */
+.prod-front {
+  padding: 32px 24px 24px;
+  text-align: center;
+  position: relative;
+}
+
+.prod-level-badge {
+  position: absolute;
+  top: 14px; right: 16px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 12px;
+  border: 1.5px solid currentColor;
+  color: #999;
+}
+.prod-level-badge.lvl-A1    { color:#2e7d32; }
+.prod-level-badge.lvl-A2    { color:#1565c0; }
+.prod-level-badge.lvl-B1    { color:#e65100; }
+.prod-level-badge.lvl-B2plus{ color:#6a1b9a; }
+.nightMode .prod-level-badge.lvl-A1,    body.nightMode .prod-level-badge.lvl-A1    { color:#81c784; }
+.nightMode .prod-level-badge.lvl-A2,    body.nightMode .prod-level-badge.lvl-A2    { color:#7baeff; }
+.nightMode .prod-level-badge.lvl-B1,    body.nightMode .prod-level-badge.lvl-B1    { color:#ffcc80; }
+.nightMode .prod-level-badge.lvl-B2plus,body.nightMode .prod-level-badge.lvl-B2plus{ color:#ce93d8; }
+
+.prod-pos-pill {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #fff;
+  background: #888;
+  border-radius: 4px;
+  padding: 3px 9px;
+  margin-bottom: 14px;
+}
+
+.prod-def {
+  font-size: 30px;
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.nightMode .prod-def, body.nightMode .prod-def { color:#f0f0f0; }
+
+.prod-en-hint {
+  font-size: 15px;
+  color: #777;
+  font-style: italic;
+  margin-bottom: 22px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+}
+.nightMode .prod-en-hint, body.nightMode .prod-en-hint { color:#999; }
+
+.prod-prompt {
+  font-size: 12px;
+  color: #bbb;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.nightMode .prod-prompt, body.nightMode .prod-prompt { color:#555; }
+
+.prod-back { padding: 0 0 24px; }
+
+.prod-example {
+  display: inline-block;
+  text-align: left;
+  max-width: 500px;
+  width: calc(100% - 32px);
+  margin: 12px 16px 4px;
+  padding: 9px 13px;
+  border-radius: 7px;
+  background: #f5f5f7;
+  border-left: 4px solid #0193c4;
+}
+.nightMode .prod-example, body.nightMode .prod-example { background:#252527; }
 """
 
 # ── Build conjugation HTML ─────────────────────────────────────────────────────
@@ -543,7 +724,10 @@ def make_conj_html(c):
             html += f'<tr><td class="pronoun">{pronoun}</td><td class="form">{fmt(form)}</td></tr>'
     html += "</table>"
 
-    # Perfekt
+    # Perfekt — auxiliary must be CONJUGATED (ich bin / ich habe), not infinitive
+    AUX_ICH = {"sein": "bin", "haben": "habe"}
+    aux_ich = AUX_ICH.get(aux, "habe")
+
     pp = c.get("pp", "")
     past = c.get("past", "")
     if pp or past:
@@ -551,7 +735,7 @@ def make_conj_html(c):
         if past:
             html += f'<strong>Prät.</strong> ich {past} &nbsp;|&nbsp; '
         if pp:
-            html += f'<strong>Perf.</strong> <span class="perf-box">ich {aux} {pp}</span>'
+            html += f'<strong>Perf.</strong> <span class="perf-box">ich {aux_ich} {pp}</span>'
         html += "</div>"
 
     return html
@@ -613,6 +797,19 @@ def apply_all():
     # ── 2. Update templates ────────────────────────────────────────────────────
     nt["tmpls"][0]["qfmt"] = FRONT
     nt["tmpls"][0]["afmt"] = BACK
+    # Card 2 — Production (EN → DE) for active recall
+    if len(nt["tmpls"]) < 2:
+        nt["tmpls"].append({
+            "name": "Production (EN→DE)",
+            "ord": 1,
+            "qfmt": PROD_FRONT,
+            "afmt": PROD_BACK,
+            "did": None,
+            "bqfmt": "", "bafmt": "",
+        })
+    else:
+        nt["tmpls"][1]["qfmt"] = PROD_FRONT
+        nt["tmpls"][1]["afmt"] = PROD_BACK
     nt["css"] = CSS
     col.models.update_dict(nt)
 
@@ -670,6 +867,16 @@ def apply_all():
             else:
                 note.fields[field_idx["Image"]] = ""
 
+        # CEFR tag — mirror the Level field as a tag so tag:A1 / tag:B1 filters work
+        lvl = levels.get(snid, "")
+        if lvl:
+            tag = lvl.replace("+", "plus")   # B2+ → B2plus (Anki tags can't contain +)
+            # Remove old level tags first
+            for old in ("A1","A2","B1","B2plus"):
+                if old in note.tags:
+                    note.tags.remove(old)
+            note.tags.append(tag)
+
         col.update_note(note)
 
         if (i + 1) % 100 == 0 or (i + 1) == total:
@@ -679,18 +886,34 @@ def apply_all():
                 max=total,
             )
 
+    # ── 4. Suspend Card 2 (production) for B2+ cards ──────────────────────────
+    # New learners shouldn't be overwhelmed with 10K cards. B2+ production
+    # cards stay suspended until the user is ready to unsuspend them.
+    b2plus_note_ids = [nid for nid in note_ids
+                       if levels.get(str(nid), "") == "B2+"]
+    if b2plus_note_ids:
+        # Get all Card-2 cards for these notes
+        card_ids = col.db.list(
+            "SELECT id FROM cards WHERE nid IN ("
+            + ",".join("?" for _ in b2plus_note_ids)
+            + ") AND ord = 1",
+            *b2plus_note_ids,
+        )
+        if card_ids:
+            col.sched.suspend_cards(card_ids)
+
     col.set_config(DONE_FLAG, True)
     mw.progress.finish()
     showInfo(
-        "✓ German Deck vollständig verbessert!\n\n"
-        "Added:\n"
-        "  • Goethe level badges (A1/A2/B1/B2+)\n"
-        "  • Verb conjugation tables for 1,246 verbs\n"
-        "  • Sentence audio for 5,112 example sentences\n"
-        "  • Word family clusters\n"
-        "  • German → English direction\n"
-        "  • Gender colours + dark mode\n\n"
-        "You can now delete the 'german_deck_ultimate' add-on."
+        "✓ German Deck v2.1 ready!\n\n"
+        "New in this version:\n"
+        "  • Fixed Perfekt bug (ich bin gewesen, not ich sein gewesen)\n"
+        "  • Card 2 added — EN→DE production for active recall\n"
+        "  • CEFR tags (use tag:A1, tag:A2, tag:B1, tag:B2plus)\n"
+        "  • Better level tagging via frequency fallback\n"
+        "  • B2+ production cards auto-suspended (unsuspend when ready)\n\n"
+        "Total cards: ~10,000 (5,009 recognition + ~2,100 active production)\n\n"
+        "You can disable the 'german_deck_ultimate' add-on now."
     )
 
 

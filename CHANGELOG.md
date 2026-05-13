@@ -1,5 +1,24 @@
 # Changelog
 
+## v2.1 — 2026-05 — *Active recall + bug fixes*
+
+### Fixed
+- 🐛 **Perfekt conjugation bug** — was showing `ich sein gewesen` / `ich haben gehabt` (infinitive aux) instead of correctly conjugated `ich bin gewesen` / `ich habe gehabt`. Affected all 1,246 verbs.
+- 🐛 **Mistagged CEFR levels** — 63 high-frequency words in the top 500 were incorrectly tagged B2+ (`deutsch`, `Deutschland`, `ihnen`, `Woche`, `Monat`, etc.). Added frequency-rank fallback: any word in the top 400 that isn't in a Goethe list defaults to A1, top 1000 to A2, top 2500 to B1.
+
+### Added
+- 🎯 **Card 2 — Production (English → German)** for active recall. Doubles the deck to ~10,000 cards.
+  - Front: English meaning + part of speech + English example as hint
+  - Back: German word + audio + example + conjugation table
+  - B2+ production cards auto-suspended initially so you start with ~3,071 cards (A1+A2+B1 only). Unsuspend B2+ when ready.
+- 🏷️ **CEFR tags** on every card: `tag:A1`, `tag:A2`, `tag:B1`, `tag:B2plus` for easy filtering and per-level deck options. (Previously CEFR was only in a field, blocking tag-based workflows.)
+- 🖼️ **821 noun images upgraded** via DuckDuckGo image search (much higher quality sources: Britannica, Wikimedia, iStock, Pixabay). Remaining ~1,500 images unchanged.
+
+### Improved
+- Level distribution: A1:655 · A2:590 · B1:1,826 · B2+:1,938 (was 615/446/1,115/2,833 — more realistic spread)
+
+---
+
 ## v2.0 — 2026-04 — *Image, conjugation & mobile overhaul*
 
 ### Added

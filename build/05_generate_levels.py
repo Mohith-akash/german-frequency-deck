@@ -160,6 +160,11 @@ levels_map = {}
 for n in notes:
     base = deck_base(n['word'])
     nid  = str(n['id'])
+    try:
+        rank = int(n['rank'])
+    except Exception:
+        rank = 99999
+
     if base in a1_only:
         levels_map[nid] = "A1"
     elif base in a2_only:
@@ -167,7 +172,18 @@ for n in notes:
     elif base in b1_only:
         levels_map[nid] = "B1"
     else:
-        levels_map[nid] = "B2+"
+        # Frequency-rank fallback for words not in any Goethe list.
+        # Top-N most common words are by definition basic vocabulary, even
+        # if Goethe's exam lists don't enumerate them (pronouns, derivatives,
+        # country names, common adjectives, etc.)
+        if rank <= 400:
+            levels_map[nid] = "A1"
+        elif rank <= 1000:
+            levels_map[nid] = "A2"
+        elif rank <= 2500:
+            levels_map[nid] = "B1"
+        else:
+            levels_map[nid] = "B2+"
 
 counts = {}
 for v in levels_map.values():
