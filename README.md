@@ -51,6 +51,8 @@ Get the latest `.apkg` from the **[Releases page](../../releases/latest)**, then
 | 🌗 **Dark mode** | Full first-class dark mode support |
 | 📊 **Frequency rank** | Every card shows its corpus frequency (#1 = most common) |
 | 🔄 **German → English** | Active recall direction (forces real retrieval, not passive recognition) |
+| ⇄ **Production card (Card 2)** | EN → DE for every A1/A2/B1 note (B2+ auto-suspended). Closes the speaking gap. |
+| 🏷️ **CEFR tags** | `tag:A1` · `tag:A2` · `tag:B1` · `tag:B2plus` for instant filtered decks |
 
 ---
 
@@ -111,12 +113,14 @@ The deck is **sorted by real-world frequency** (corpus-based). The Goethe levels
 
 | Cards | Goethe Level | What it unlocks |
 |---|---|---|
-| **1 → 615** | A1 | Survive in Germany (greetings, numbers, basic food/transport) |
-| **616 → 1,061** | A2 | Manage daily life (shopping, simple opinions, past tense) |
-| **1,062 → 2,176** | B1 | **Pass the Goethe-Zertifikat B1 exam** — the bar for the [German Blue Card](https://www.bluecard-eu.de/) |
-| **2,177 → 5,009** | B2 / C1 | Read newspapers, watch TV without subtitles, professional fluency |
+| **First 655** | A1 | Survive in Germany (greetings, numbers, basic food/transport) |
+| **+590** | A2 | Manage daily life (shopping, simple opinions, past tense) |
+| **+1,826** | B1 | **Pass the Goethe-Zertifikat B1 exam** — the bar for the [German Blue Card](https://www.bluecard-eu.de/) |
+| **+1,938** | B2 / C1 | Read newspapers, watch TV without subtitles, professional fluency |
 
-Recommended pace: **20 new cards/day**. You'll hit B1 in ~3 months and full deck in ~9 months.
+Cumulative: A1+A2 = **1,245** cards · A1+A2+B1 = **3,071** cards · all levels = **5,009** cards. Recommended pace: 20 new cards/day = B1 in ~5 months, full deck in ~9 months.
+
+> Active recall: a second card type (English → German) is generated for all A1+A2+B1 notes (3,071 production cards). B2+ production cards are auto-suspended on import — unsuspend them as you advance.
 
 ---
 
