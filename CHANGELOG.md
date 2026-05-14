@@ -12,7 +12,7 @@
   - Back: German word + audio + example + conjugation table
   - B2+ production cards auto-suspended initially so you start with ~3,071 cards (A1+A2+B1 only). Unsuspend B2+ when ready.
 - 🏷️ **CEFR tags** on every card: `tag:A1`, `tag:A2`, `tag:B1`, `tag:B2plus` for easy filtering and per-level deck options. (Previously CEFR was only in a field, blocking tag-based workflows.)
-- 🖼️ **821 noun images upgraded** via DuckDuckGo image search (much higher quality sources: Britannica, Wikimedia, iStock, Pixabay). Remaining ~1,500 images unchanged.
+- 🖼️ **~2,170 noun images upgraded** via DuckDuckGo image search across two refresh passes (much higher quality sources: Britannica, Wikimedia, iStock, Pixabay). ~90% of all noun images now from DDG.
 
 ### Improved
 - Level distribution: A1:655 · A2:590 · B1:1,826 · B2+:1,938 (was 615/446/1,115/2,833 — more realistic spread)
