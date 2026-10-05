@@ -15,8 +15,8 @@ Open an [issue](../../issues/new) with:
 
 If a noun's image isn't great:
 
-1. Find a better image (must be Creative Commons / public domain — Wikipedia, Openverse, Pixabay, etc.)
-2. Save it as `img_de_<noun>.jpg` (e.g. `img_de_zeit.jpg`) — ideally ≤ 300px max dimension, JPG quality 75
+1. Find a better image (must be Creative Commons or public domain: Wikipedia, Openverse, Pixabay, etc.)
+2. Save it as `img_de_<noun>.jpg` (e.g. `img_de_zeit.jpg`), ideally ≤ 300px max dimension, JPG quality 75
 3. Open a PR adding it to `media/replacements/` with a one-line note describing the swap
 
 ## Medium contributions
@@ -31,7 +31,7 @@ The deck currently has 5,009 words covering A1-C1. To extend further:
 
 ### Fix a wrong conjugation
 
-Conjugations are derived rule-based from the deck's `Word` field. The full irregular verb table is in [`build/04_generate_conjugations.py`](build/04_generate_conjugations.py) — `IRREGULAR` dictionary.
+Conjugations are derived rule-based from the deck's `Word` field. The full irregular verb table is in [`build/04_generate_conjugations.py`](build/04_generate_conjugations.py), in the `IRREGULAR` dictionary.
 
 If a verb is conjugated wrong:
 1. Add it to the `IRREGULAR` map with the correct forms
@@ -46,7 +46,7 @@ The Anki add-on at [`addon/german_deck_ultimate/__init__.py`](addon/german_deck_
 
 ### New language pairs
 
-The build pipeline is German-specific in places (Goethe levels, German Wikipedia, KatjaNeural voice). But the architecture is general. If you want to fork it for Spanish/French/etc., the pipeline shape stays the same — swap the data sources.
+The build pipeline is German-specific in places (Goethe levels, German Wikipedia, KatjaNeural voice). But the architecture is general. If you want to fork it for Spanish/French/etc., the pipeline shape stays the same. Swap the data sources.
 
 ## Pull request guidelines
 

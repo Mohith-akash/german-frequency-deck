@@ -42,8 +42,8 @@ python 03_generate_sentence_audio.py
 python 04_generate_conjugations.py
 python 05_generate_levels.py     # downloads Goethe word lists
 python 06_generate_word_families.py
-python 07_generate_images.py     # ~20 min — Wikipedia + Openverse APIs
-python 08_optimize_images.py     # ~1 min — local resize
+python 07_generate_images.py     # ~20 min, Wikipedia + Openverse APIs
+python 08_optimize_images.py     # ~1 min, local resize
 
 # 4. Bundle the IPA font
 python 09_get_ipa_font.py
@@ -57,13 +57,13 @@ python 09_get_ipa_font.py
 
 ### Why rule-based conjugations instead of scraping Wiktionary?
 
-We tried Wiktionary first — got rate-limited at 23/1,246 verbs. Pivoted to deriving conjugations from the deck's own `Word` field which already encodes `infinitive, er-form, präteritum, perfekt`. From those 4 forms, all 6 present tense forms can be derived via rules + a small irregular verb table.
+We tried Wiktionary first and got rate-limited at 23/1,246 verbs. Pivoted to deriving conjugations from the deck's own `Word` field which already encodes `infinitive, er-form, präteritum, perfekt`. From those 4 forms, all 6 present tense forms can be derived via rules + a small irregular verb table.
 
 100% coverage in <2 seconds, no API dependencies.
 
 ### Why English Wikipedia for images instead of German?
 
-German Wikipedia has lower lead-image coverage for common nouns (only 81/2435 had usable images). English Wikipedia + Openverse-with-English-meaning gave 97% coverage with much better semantic accuracy because the deck's `def1` field is already disambiguated (`Bank` = "bank" or "bench" — never both).
+German Wikipedia has lower lead-image coverage for common nouns (only 81/2435 had usable images). English Wikipedia + Openverse-with-English-meaning gave 97% coverage with much better semantic accuracy because the deck's `def1` field is already disambiguated (`Bank` = "bank" or "bench", never both).
 
 ### Why bundle the Charis SIL font?
 

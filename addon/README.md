@@ -10,7 +10,7 @@ This is the add-on that injects all enrichments (audio, images, conjugations, le
    - **macOS:** `~/Library/Application Support/Anki2/addons21/`
    - **Linux:** `~/.local/share/Anki2/addons21/`
 3. Make sure all the JSON data files (`levels.json`, `conjugations.json`, `sentence_audio.json`, `families.json`, `image_map.json`) are in your system **TEMP** directory (the build pipeline writes them there)
-4. Open Anki — the add-on auto-runs on collection load
+4. Open Anki; the add-on runs automatically on collection load
 5. Wait ~1-2 minutes for the progress bar
 6. After the success popup, you can disable or delete the add-on (it's one-shot)
 

@@ -1,11 +1,11 @@
 <h1 align="center">German Frequency Deck</h1>
 
 <p align="center">
-  <strong>5,009 words · A1 → C1 · the most complete free German Anki deck</strong>
+  <strong>5,009 words · A1 → C1 · free German Anki deck</strong>
 </p>
 
 <p align="center">
-  <em>Native neural audio · 2,369 images · Full verb conjugations · Goethe level badges · Word families · Mobile-ready</em>
+  <em>Neural TTS audio · 2,369 images · Full verb conjugations · Goethe level badges · Word families · Mobile-ready</em>
 </p>
 
 <p align="center">
@@ -18,17 +18,17 @@
 </p>
 
 <p align="center">
-  <a href="#-download">Download</a> ·
-  <a href="#-whats-inside">Features</a> ·
-  <a href="#-card-examples">Cards</a> ·
-  <a href="#-study-strategy">Study</a> ·
-  <a href="#%EF%B8%8F-how-its-built">How it's built</a> ·
-  <a href="#-contributing">Contribute</a>
+  <a href="#download">Download</a> ·
+  <a href="#whats-inside">Features</a> ·
+  <a href="#card-examples">Cards</a> ·
+  <a href="#study-strategy">Study</a> ·
+  <a href="#how-its-built">How it's built</a> ·
+  <a href="#contributing">Contribute</a>
 </p>
 
 ---
 
-## 📥 Download
+## Download
 
 Get the latest `.apkg` from the **[Releases page](../../releases/latest)**, then in Anki: **File → Import**.
 
@@ -36,27 +36,27 @@ Get the latest `.apkg` from the **[Releases page](../../releases/latest)**, then
 
 ---
 
-## ✨ What's inside
+## What's inside
 
 | Feature | Detail |
 |---|---|
-| 🔊 **Word audio** | Microsoft KatjaNeural TTS — every one of 5,009 words |
-| 🔊 **Sentence audio** | All 5,112 example sentences spoken naturally — train your listening |
-| 🖼️ **Images** | 2,369 nouns visualised (English-meaning matched to disambiguate `Bank`/`bench` etc.) |
-| 📖 **Verb conjugations** | All 1,246 verbs with full present tense, Präteritum and Perfekt — separable prefixes underlined |
-| 🎯 **Goethe level badges** | Every card tagged A1 / A2 / B1 / B2+ |
-| 👨‍👩‍👧 **Word families** | 1,790 cards show related words (e.g. `arbeiten` → die Arbeit, der Arbeiter, arbeitslos) |
-| 🎨 **Gender colours** | `der` blue · `die` red · `das` green — both in headers and example borders |
-| 📝 **IPA pronunciation** | Bundled Charis SIL font ensures it renders correctly on every device, even offline AnkiDroid |
-| 🌗 **Dark mode** | Full first-class dark mode support |
-| 📊 **Frequency rank** | Every card shows its corpus frequency (#1 = most common) |
-| 🔄 **German → English** | Active recall direction (forces real retrieval, not passive recognition) |
-| ⇄ **Production card (Card 2)** | EN → DE for every A1/A2/B1 note (B2+ auto-suspended). Closes the speaking gap. |
-| 🏷️ **CEFR tags** | `tag:A1` · `tag:A2` · `tag:B1` · `tag:B2plus` for instant filtered decks |
+| **Word audio** | Microsoft KatjaNeural TTS for all 5,009 words |
+| **Sentence audio** | All 5,112 example sentences, for listening practice |
+| **Images** | 2,369 nouns visualised (English-meaning matched to disambiguate `Bank`/`bench` etc.) |
+| **Verb conjugations** | All 1,246 verbs with full present tense, Präteritum and Perfekt; separable prefixes underlined |
+| **Goethe level badges** | Every card tagged A1 / A2 / B1 / B2+ |
+| **Word families** | 1,790 cards show related words (e.g. `arbeiten` → die Arbeit, der Arbeiter, arbeitslos) |
+| **Gender colours** | `der` blue · `die` red · `das` green, in headers and example borders |
+| **IPA pronunciation** | Bundled Charis SIL font ensures it renders correctly on every device, even offline AnkiDroid |
+| **Dark mode** | Full first-class dark mode support |
+| **Frequency rank** | Every card shows its corpus frequency (#1 = most common) |
+| **German → English** | Active recall direction (forces real retrieval, not passive recognition) |
+| **Production card (Card 2)** | EN → DE for every A1/A2/B1 note (B2+ auto-suspended). Closes the speaking gap. |
+| **CEFR tags** | `tag:A1` · `tag:A2` · `tag:B1` · `tag:B2plus` for instant filtered decks |
 
 ---
 
-## 📸 Card examples
+## Card examples
 
 ### Front (the prompt)
 
@@ -107,7 +107,7 @@ Get the latest `.apkg` from the **[Releases page](../../releases/latest)**, then
 
 ---
 
-## 📚 Study strategy
+## Study strategy
 
 The deck is **sorted by real-world frequency** (corpus-based). The Goethe levels are layered on top, so you can study sequentially:
 
@@ -115,18 +115,18 @@ The deck is **sorted by real-world frequency** (corpus-based). The Goethe levels
 |---|---|---|
 | **First 655** | A1 | Survive in Germany (greetings, numbers, basic food/transport) |
 | **+590** | A2 | Manage daily life (shopping, simple opinions, past tense) |
-| **+1,826** | B1 | **Pass the Goethe-Zertifikat B1 exam** — the bar for the [German Blue Card](https://www.bluecard-eu.de/) |
+| **+1,826** | B1 | **Pass the Goethe-Zertifikat B1 exam**; with B1, [Blue Card](https://www.bluecard-eu.de/) holders can apply for permanent residence after 21 months instead of 27 |
 | **+1,938** | B2 / C1 | Read newspapers, watch TV without subtitles, professional fluency |
 
 Cumulative: A1+A2 = **1,245** cards · A1+A2+B1 = **3,071** cards · all levels = **5,009** cards. Recommended pace: 20 new cards/day = B1 in ~5 months, full deck in ~9 months.
 
-> Active recall: a second card type (English → German) is generated for all A1+A2+B1 notes (3,071 production cards). B2+ production cards are auto-suspended on import — unsuspend them as you advance.
+> Active recall: a second card type (English → German) is generated for all A1+A2+B1 notes (3,071 production cards). B2+ production cards are auto-suspended on import; unsuspend them as you advance.
 
 ---
 
-## 🛠️ How it's built
+## How it's built
 
-This isn't a hand-crafted deck. Every enrichment was generated programmatically from the original frequency word list. The pipeline:
+Every enrichment was generated by scripts from the original frequency word list. The pipeline:
 
 ```
                 ┌─────────────────────────────────────┐
@@ -169,22 +169,22 @@ This isn't a hand-crafted deck. Every enrichment was generated programmatically 
                 └─────────────────────────────────────┘
                                   │
                                   ▼
-                          ✨ Final deck (162 MB)
+                          Final deck (162 MB)
 ```
 
-See **[`build/README.md`](build/README.md)** for full reproducibility — every script is included.
+See **[`build/README.md`](build/README.md)** to rebuild it yourself. Every script is included.
 
 ### Technical highlights
 
-- **Concurrent TTS generation**: 5112 sentences via `edge-tts` + `asyncio` semaphore (15 workers) — full audio set built in ~3 minutes
-- **Hybrid image source**: Tried German Wikipedia first → fell back to Openverse with the *English* meaning to avoid polysemy errors (`Bank` could mean bank OR bench — using `def1=bank` returns the right image)
+- **Concurrent TTS generation**: 5112 sentences via `edge-tts` + `asyncio` semaphore (15 workers); the full audio set builds in about 3 minutes
+- **Hybrid image source**: Tried German Wikipedia first → fell back to Openverse with the *English* meaning to avoid polysemy errors (`Bank` could mean bank or bench; searching with `def1=bank` returns the right image)
 - **Direct protobuf manipulation**: Anki 2.1.50+ stores card templates as protobufs in the SQLite DB. Built a manual encoder/decoder rather than ship the heavy `google.protobuf` dependency
 - **Conjugation derivation**: Avoided rate-limited Wiktionary scraping by parsing conjugations directly from the deck's own `Word` field (`"fahren, fährt, fuhr, ist gefahren"` → 6 present tense forms via rules + irregular verb table)
-- **Bundled IPA font**: Charis SIL `.woff2` (130 KB) with `_` prefix so Anki preserves it during media checks — fixes "NO GLYPH" rendering on AnkiDroid
+- **Bundled IPA font**: Charis SIL `.woff2` (130 KB) with `_` prefix so Anki preserves it during media checks, which fixes "NO GLYPH" rendering on AnkiDroid
 
 ---
 
-## 🆚 Why this deck vs others
+## Compared to other decks
 
 | Other "5000 German Words" decks | This deck |
 |---|---|
@@ -197,22 +197,22 @@ See **[`build/README.md`](build/README.md)** for full reproducibility — every 
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Found a wrong image? A conjugation mistake? Want to add B2 vocabulary?
 
 1. Open an **[issue](../../issues)** describing the change
-2. Or fork → fix → PR — for image swaps you can drop replacement files in `media/` and update `image_map.json`
+2. Or fork → fix → PR. For image swaps you can drop replacement files in `media/` and update `image_map.json`
 
 The whole build pipeline is reproducible from `build/` so anyone can regenerate the deck from scratch.
 
 ---
 
-## 📜 License & credits
+## License & credits
 
-- **Deck content (this version)**: [MIT](LICENSE) — free to use, modify, redistribute
+- **Deck content (this version)**: [MIT](LICENSE), free to use, modify and redistribute
 - **Original word list**: frequency-sorted German lemmas from OpenSubtitles via Hermit Dave (CC-BY-SA)
-- **Audio**: Microsoft Edge neural TTS (KatjaNeural — German, female, natural)
+- **Audio**: Microsoft Edge neural TTS (KatjaNeural, German female voice)
 - **Images**: Wikipedia / Wikimedia Commons / Openverse (all CC-licensed)
 - **IPA font**: [Charis SIL](https://software.sil.org/charis/) by SIL International (free for any use)
 - **Goethe word lists**: [ilkermeliksitki/goethe-institute-wordlist](https://github.com/ilkermeliksitki/goethe-institute-wordlist) (parsed from official Goethe Institut PDFs)
@@ -220,5 +220,5 @@ The whole build pipeline is reproducible from `build/` so anyone can regenerate 
 ---
 
 <p align="center">
-  <em>Built by a learner, for learners. <strong>Viel Erfolg beim Lernen 🇩🇪</strong></em>
+  <em>Built while learning German myself. <strong>Viel Erfolg beim Lernen!</strong></em>
 </p>
