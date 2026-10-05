@@ -210,10 +210,10 @@ The whole build pipeline is reproducible from `build/` so anyone can regenerate 
 
 ## License & credits
 
-- **Deck content (this version)**: [MIT](LICENSE), free to use, modify and redistribute
+- **Code and card text**: [MIT](LICENSE), free to use, modify and redistribute
 - **Original word list**: frequency-sorted German lemmas from OpenSubtitles via Hermit Dave (CC-BY-SA)
 - **Audio**: Microsoft Edge neural TTS (KatjaNeural, German female voice)
-- **Images**: Wikipedia / Wikimedia Commons / Openverse (all CC-licensed)
+- **Images**: found through Wikipedia, Openverse and DuckDuckGo image search. They stay with their original owners and are not covered by the MIT license. If one of them is yours and you want it gone, open an [issue](../../issues) and I'll replace it.
 - **IPA font**: [Charis SIL](https://software.sil.org/charis/) by SIL International (free for any use)
 - **Goethe word lists**: [ilkermeliksitki/goethe-institute-wordlist](https://github.com/ilkermeliksitki/goethe-institute-wordlist) (parsed from official Goethe Institut PDFs)
 
