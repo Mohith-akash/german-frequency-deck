@@ -15,6 +15,7 @@
   <img alt="conjugations" src="https://img.shields.io/badge/verb_conjugations-1%2C246-6a1b9a">
   <img alt="size" src="https://img.shields.io/badge/.apkg-162_MB-555555">
   <img alt="license" src="https://img.shields.io/badge/license-MIT-blueviolet">
+  <a href="https://ankiweb.net/shared/info/38922074"><img alt="AnkiWeb downloads" src="https://img.shields.io/badge/AnkiWeb-7%2C900%2B_downloads-1565c0"></a>
 </p>
 
 <p align="center">
@@ -31,6 +32,9 @@
 ## Download
 
 Get the latest `.apkg` from the **[Releases page](../../releases/latest)**, then in Anki: **File → Import**.
+Or install it straight from **[AnkiWeb](https://ankiweb.net/shared/info/38922074)**, where it has 7,900+ downloads and 25 of 29 ratings are thumbs up.
+
+> "This is the most organised Anki deck to learn German I have ever seen." (AnkiWeb review, May 2026)
 
 > Works on **Anki desktop** (Windows/macOS/Linux), **AnkiDroid** (Android), and **AnkiMobile** (iOS).
 
