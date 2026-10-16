@@ -841,10 +841,10 @@ def apply_all():
 
         # Sentence audio
         smap = sent_audio.get(snid, {})
-        for slot, fname_key, fld_name in [
-            ("s1", "SentenceAudio1", "SentenceAudio1"),
-            ("s2", "SentenceAudio2", "SentenceAudio2"),
-            ("s3", "SentenceAudio3", "SentenceAudio3"),
+        for slot, fld_name in [
+            ("s1", "SentenceAudio1"),
+            ("s2", "SentenceAudio2"),
+            ("s3", "SentenceAudio3"),
         ]:
             if fld_name in field_idx:
                 fname = smap.get(slot, "")

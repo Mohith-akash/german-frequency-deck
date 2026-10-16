@@ -5,7 +5,7 @@ Target: bring images from ~120 MB down to ~50-60 MB while keeping them clear.
 - JPG quality 75 (was likely 85-90)
 - Strip metadata
 """
-import sys, os, glob
+import sys
 from pathlib import Path
 from PIL import Image
 sys.stdout.reconfigure(encoding='utf-8')
@@ -29,7 +29,7 @@ for i, f in enumerate(files):
         # Save back as JPG quality 75, no exif
         img.save(f, 'JPEG', quality=75, optimize=True)
         saved += 1
-    except Exception as e:
+    except Exception:
         errors += 1
     if (i+1) % 200 == 0:
         print(f"  {i+1}/{len(files)}", end='\r')

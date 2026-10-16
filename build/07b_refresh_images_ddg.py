@@ -8,7 +8,7 @@ Strategy:
   - 5 concurrent workers + 0.4s sleep per worker = polite to DDG
   - Skip on rate limit, retry after backoff
 """
-import urllib.request, json, sys, re, os, time, random
+import urllib.request, json, sys, re, time, random
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from ddgs import DDGS

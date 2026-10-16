@@ -70,5 +70,5 @@ except Exception as e:
 import json
 with open("C:/Users/Mohith Akash/AppData/Local/Temp/font_files.json", "w", encoding="utf-8") as f:
     json.dump(font_files, f, ensure_ascii=False, indent=2)
-print(f"\nFont files saved to media folder.")
-print(f"Mapping saved → font_files.json")
+print("\nFont files saved to media folder.")
+print("Mapping saved → font_files.json")

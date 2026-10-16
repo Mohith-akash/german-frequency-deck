@@ -130,7 +130,7 @@ a1_only = a1_only | MANUAL_A1
 a2_only = a2_only - MANUAL_A1
 b1_only = b1_only - MANUAL_A1
 
-print(f"\nAfter manual overrides:")
+print("\nAfter manual overrides:")
 print(f"  A1: {len(a1_only)} | A2-excl: {len(a2_only)} | B1-excl: {len(b1_only)}")
 
 # Verify fixes

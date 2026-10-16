@@ -10,7 +10,6 @@ Improvements:
 
 import asyncio
 import json
-import os
 import re
 import shutil
 import sqlite3
@@ -372,7 +371,7 @@ def main():
     cur.execute("SELECT models FROM col")
     models: dict = json.loads(cur.fetchone()["models"])
 
-    for mid, model in models.items():
+    for model in models.values():
         field_names = [f["name"] for f in model["flds"]]
 
         # Add "Audio" field if missing
@@ -502,7 +501,7 @@ def main():
 
     db.close()
     size_mb = APKG_OUT.stat().st_size / 1024 / 1024
-    print(f"\n✓ Done! Improved deck saved to:")
+    print("\n✓ Done! Improved deck saved to:")
     print(f"  {APKG_OUT}  ({size_mb:.1f} MB)")
     print("\nImport steps:")
     print("  1. Close Anki completely (important — DB is locked while open)")

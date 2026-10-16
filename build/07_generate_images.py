@@ -11,7 +11,7 @@ Disambiguation: For polysemous nouns (Bank=bank/bench, Schloss=castle/lock),
 the deck's `def1` field already gives us the PRIMARY meaning. We use it directly
 rather than the German word, which avoids ambiguity.
 """
-import urllib.request, urllib.parse, json, sys, re, os
+import urllib.request, urllib.parse, json, sys, re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 

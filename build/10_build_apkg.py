@@ -2,7 +2,7 @@
 Build the v2.1 .apkg directly from the current Anki collection, bypassing the GUI export.
 Strips scheduling info but keeps all media.
 """
-import json, os, re, shutil, sqlite3, sys, tempfile, zipfile
+import json, re, shutil, sqlite3, sys, tempfile, zipfile
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")

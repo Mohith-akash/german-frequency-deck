@@ -8,7 +8,7 @@ e.g. "fahren, fährt, fuhr, ist gefahren"
 From these 4 forms we derive all 6 present tense forms via rules.
 Saves conjugations.json: {note_id: {...}}
 """
-import json, re, sys
+import json, sys
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding='utf-8')
@@ -116,9 +116,6 @@ IRREGULAR = {
     'überlegen':  ('überlege','überlegst','überlegt','überlegen','überlegt','überlegen','überlegte','überlegt','haben'),
     'buchen':     ('buche','buchst','bucht','buchen','bucht','buchen','buchte','gebucht','haben'),
 }
-
-# Umlaut reversal for strong verbs (er-form umlaut → ich has no umlaut)
-UMLAUT_REVERSE = {'ä':'a','ö':'o','ü':'u','ä':'a'}
 
 def derive_all_forms(verb_entry):
     word = verb_entry['word']
@@ -235,7 +232,7 @@ for verb_entry in verbs:
     try:
         c = derive_all_forms(verb_entry)
         results[nid] = c
-    except Exception as e:
+    except Exception:
         failed += 1
 
 print(f"Done: {len(results)}/{len(verbs)} verbs ({failed} failed)")
